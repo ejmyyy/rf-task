@@ -1,0 +1,769 @@
+{
+	"info": {
+		"_postman_id": "8901a0d1-c6d6-4c64-9470-1126d617ab3d",
+		"name": "rf-colletion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new protocol success 201",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Mirka\",\r\n    \"state\": \"NEW\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new protocol error: empty fields 409",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"author\": \"Mirka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update whole protocol based on id success 200",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Mirka\",\r\n\t\"state\": \"CANCELLED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update whole protocol based on id, fail in id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Mirka\",\r\n\t\"state\": \"CANCELLED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update whole protocol based on id, fail on empty fields 409",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Mirka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update protocol state based on id success 200",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"state\": \"NEW\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/1/state",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"1",
+						"state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update protocol state based on id, fail in id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"NEW\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/10/state",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"10",
+						"state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update protocol state based on id, fail in id not found 404 Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/protocols/1/state",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"protocols",
+						"1",
+						"state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new document success 201",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"doc10\",\r\n    \"author\" : \"Mirka\", \r\n    \"documentType\" : \"JPG\",\r\n    \"protocolId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new document, fail missing fields 409",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"doc10\",\r\n    \"protocolId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new document, fail on protocol id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\" : \"doc10\",\r\n    \"author\" : \"Mirka\", \r\n    \"documentType\" : \"JPG\",\r\n    \"protocolId\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update document success 200",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"doc11\",\r\n    \"author\" : \"Mirka\", \r\n    \"documentType\" : \"JPG\",\r\n    \"protocolId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update document, fail on document id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"doc11\",\r\n    \"author\" : \"Mirka\", \r\n    \"documentType\" : \"JPG\",\r\n    \"protocolId\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents/111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents",
+						"111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update document, fail on protocol id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"name\" : \"doc11\",\r\n    \"author\" : \"Mirka\", \r\n    \"documentType\" : \"JPG\",\r\n    \"protocolId\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete document success 200",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete document, fail on id not found 404",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "linda",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/documents/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"documents",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "pass",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "linda",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

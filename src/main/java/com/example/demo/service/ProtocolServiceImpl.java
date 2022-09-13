@@ -73,6 +73,13 @@ public class ProtocolServiceImpl implements ProtocolService {
                     LOGGER.error("Error in finding protocol with id {}", id, exception);
                     throw exception;
                 });
+
+        if (protocolStateDto.state() == null) {
+            EmptyFieldException exception = new EmptyFieldException("Some of the fields are empty"); // 409
+            LOGGER.error("Error in updating protocol", exception);
+            throw exception;
+        }
+
         protocol.setProtocolState(ProtocolState.valueOf(protocolStateDto.state()));
 
         protocolRepository.save(protocol);

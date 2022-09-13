@@ -8,7 +8,7 @@
 - authorization for all endpoints
 - users are already created in SecurityConfiguration (e.g. username: linda, passowrd: pass)
 - schema.sql and data.sql are provided for creating tables and inserting data
-- you can test the application using postman collections.
+- you can test the application using postman [collections](./postman-collection).
 
 
 **Note:** 

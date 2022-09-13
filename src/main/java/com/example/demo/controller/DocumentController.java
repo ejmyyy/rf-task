@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.DocumentDto;
 import com.example.demo.model.Document;
 import com.example.demo.service.DocumentService;
 import org.springframework.http.ResponseEntity;
@@ -17,20 +18,20 @@ public class DocumentController {
 
 
     @PostMapping
-    public ResponseEntity<Object> createDocument(@RequestBody Document document) {
+    public ResponseEntity<Document> createDocument(@RequestBody DocumentDto document) {
         return documentService.createDocument(document);
     }
 
-    @PutMapping ("/{documentId}")
-    public ResponseEntity<Object> updateDocument(@RequestBody Document document, @PathVariable Long documentId) {
+    @PutMapping("/{documentId}")
+    public ResponseEntity<Document> updateDocument(@RequestBody DocumentDto document,
+                                                   @PathVariable(name = "documentId") Long documentId) {
         return documentService.updateDocument(document, documentId);
     }
 
     @DeleteMapping("/{documentId}")
-    public ResponseEntity<Object> deleteDocument(@PathVariable Long documentId) {
+    public ResponseEntity<Object> deleteDocument(@PathVariable(name = "documentId") Long documentId) {
         return documentService.deleteDocument(documentId);
     }
-
 
 
 }

@@ -19,17 +19,19 @@ public class ProtocolController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createProtocol(@RequestBody Protocol protocol) {
+    public ResponseEntity<Protocol> createProtocol(@RequestBody ProtocolDto protocol) {
         return protocolService.createProtocol(protocol);
     }
 
     @PutMapping("/{protocolId}")
-    public ResponseEntity<Object> updateProtocol(@RequestBody ProtocolDto protocol, @PathVariable Long protocolId) {
+    public ResponseEntity<Protocol> updateProtocol(@RequestBody ProtocolDto protocol,
+                                                   @PathVariable(name = "protocolId") Long protocolId) {
         return protocolService.updateProtocol(protocol, protocolId);
     }
 
-    @PutMapping("/{protocolId}")
-    public ResponseEntity<Object> updateProtocolState(@RequestBody ProtocolStateDto protocolStateDto, @PathVariable Long protocolId) {
+    @PutMapping("/{protocolId}/state")
+    public ResponseEntity<Protocol> updateProtocolState(@RequestBody ProtocolStateDto protocolStateDto,
+                                                        @PathVariable(name = "protocolId") Long protocolId) {
         return protocolService.updateProtocolState(protocolId, protocolStateDto);
     }
 
